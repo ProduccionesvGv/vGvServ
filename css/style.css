@@ -318,3 +318,35 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   }
 }
+
+/* ==========================================
+   Fuentes: Open Sans para texto, Montserrat para encabezados
+   ========================================== */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ==========================================
+   Contacto: alinear a la izquierda y ajustar ancho
+   ========================================== */
+.contacto .container {
+  text-align: left;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.contacto form input,
+.contacto form textarea,
+.contacto form button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Opcional: mejorar separación de campos */
+.contacto form input,
+.contacto form textarea {
+  margin-bottom: 1rem;
+}

@@ -256,43 +256,14 @@ body {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
-.servicio {
-  position: relative;
-  overflow: hidden;
-}
 
-.servicio img {
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.servicio:hover img {
-  transform: scale(1.05);
-  filter: brightness(0.7);
-}
-
-.servicio::after {
-  content: "Ver más";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.servicio:hover::after {
-  opacity: 1;
-}
+/* Animación personalizada al hacer scroll para .servicio */
 .servicio {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
+
 .servicio.visible {
   opacity: 1;
   transform: translateY(0);

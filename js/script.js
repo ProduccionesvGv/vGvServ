@@ -1,5 +1,5 @@
-
 document.addEventListener('DOMContentLoaded', function () {
+  // Modal al hacer clic en imágenes
   document.querySelectorAll('.modal-trigger').forEach(img => {
     img.addEventListener('click', () => {
       document.getElementById('modal-title').textContent = img.dataset.title;
@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
-      // Añadir precio al final
       if (img.dataset.price) {
         const li = document.createElement('li');
         li.innerHTML = `<strong>Precio:</strong> ${img.dataset.price}`;
@@ -28,11 +27,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  document.querySelector('.close-button').addEventListener('click', () => {
-    const modal = document.getElementById('image-modal');
-    modal.style.display = 'none';
-    modal.querySelector('.modal-content').classList.remove('modal-slide-in');
-  });
+  const closeBtn = document.querySelector('.close-button');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      const modal = document.getElementById('image-modal');
+      modal.style.display = 'none';
+      modal.querySelector('.modal-content').classList.remove('modal-slide-in');
+    });
+  }
 
   window.addEventListener('click', (event) => {
     const modal = document.getElementById('image-modal');
@@ -41,4 +43,20 @@ document.addEventListener('DOMContentLoaded', function () {
       modal.querySelector('.modal-content').classList.remove('modal-slide-in');
     }
   });
+
+  // Animación personalizada al hacer scroll
+  const servicios = document.querySelectorAll('.servicio');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // solo una vez
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  servicios.forEach(servicio => observer.observe(servicio));
 });

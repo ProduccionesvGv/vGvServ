@@ -3,7 +3,18 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.modal-trigger').forEach(img => {
     img.addEventListener('click', () => {
       document.getElementById('modal-title').textContent = img.dataset.title;
-      document.getElementById('modal-description').textContent = img.dataset.description;
+
+      const ul = document.getElementById('modal-description-list');
+      ul.innerHTML = "";
+      const items = img.dataset.description.split(/\.\s*/);
+      items.forEach(text => {
+        if (text.trim()) {
+          const li = document.createElement('li');
+          li.textContent = text.trim();
+          ul.appendChild(li);
+        }
+      });
+
       const modal = document.getElementById('image-modal');
       modal.style.display = 'block';
       modal.querySelector('.modal-content').classList.add('modal-slide-in');

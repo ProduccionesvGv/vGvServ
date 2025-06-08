@@ -234,3 +234,25 @@ body {
 .whatsapp-float img:hover {
   transform: scale(1.1);
 }
+
+
+#modal-description-list li:last-child {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #1a8917;
+}
+
+/* Estilo más intuitivo para las imágenes de los servicios */
+.servicio img {
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.servicio img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}

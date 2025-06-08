@@ -307,3 +307,14 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   }
 }
+
+/* Efecto lift automático al hacer scroll en móviles */
+@media (max-width: 768px) {
+  .servicio img {
+    transition: transform 0.6s ease-out, box-shadow 0.6s ease-out;
+  }
+  .servicio img.lift-animation {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+}

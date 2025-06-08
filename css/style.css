@@ -200,3 +200,19 @@ body {
   color: black;
   text-decoration: none;
 }
+
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-slide-in {
+  animation: slideInFromBottom 0.4s ease-out;
+}

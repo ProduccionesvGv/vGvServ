@@ -289,3 +289,21 @@ body {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Mejoras estéticas móviles: más espacio y efecto intuitivo */
+@media (max-width: 768px) {
+  .servicios-grid {
+    gap: 2rem !important;
+  }
+  .servicio {
+    margin-bottom: 2rem;
+  }
+  .servicio img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
+  }
+  .servicio img:active {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+}

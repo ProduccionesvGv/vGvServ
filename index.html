@@ -115,5 +115,32 @@ src="https://i.blogs.es/af15e2/windows-7-10-11/1366_2000.jpeg"/>
     offset: 100       // Inicia 100px antes de entrar en viewport
   });
 </script>
+<script>
+  const serviceImages = document.querySelectorAll('.servicio img');
+
+  serviceImages.forEach((img) => {
+    let touchStartY = 0;
+    let touchStartTime = 0;
+
+    img.addEventListener('touchstart', (e) => {
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = Date.now();
+    });
+
+    img.addEventListener('touchend', (e) => {
+      const touchEndY = e.changedTouches[0].clientY;
+      const timeDiff = Date.now() - touchStartTime;
+      const swipeDistance = Math.abs(touchStartY - touchEndY);
+
+      // Si fue un swipe o un tap rápido
+      if (swipeDistance > 20 || timeDiff < 250) {
+        img.classList.add('lifted');
+        setTimeout(() => {
+          img.classList.remove('lifted');
+        }, 1000); // El efecto dura 1 segundo
+      }
+    });
+  });
+</script>
 </body>
 </html>

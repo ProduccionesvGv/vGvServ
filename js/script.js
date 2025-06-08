@@ -1,6 +1,13 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.modal-trigger').forEach(img => {
+
+  // Asegurar que el modal inicia oculto
+  const imageModal = document.getElementById('image-modal');
+  if (imageModal) {
+    imageModal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
     img.addEventListener('click', () => {
       document.getElementById('modal-title').textContent = img.dataset.title;
 

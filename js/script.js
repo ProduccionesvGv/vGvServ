@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
 
+      // Añadir precio al final
+      if (img.dataset.price) {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>Precio:</strong> ${img.dataset.price}`;
+        ul.appendChild(li);
+      }
+
       const modal = document.getElementById('image-modal');
       modal.style.display = 'block';
       modal.querySelector('.modal-content').classList.add('modal-slide-in');

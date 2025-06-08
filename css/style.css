@@ -256,15 +256,13 @@ body {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
-
-/* Animación personalizada al hacer scroll para .servicio */
 .servicio {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(40px) scale(0.95);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .servicio.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }

@@ -18,8 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Añadir precio al final
       if (img.dataset.price) {
         const li = document.createElement('li');
-        li.className = "precio-final";
-        li.textContent = `Precio: ${img.dataset.price}`;
+        li.innerHTML = `<strong>Precio:</strong> ${img.dataset.price}`;
         ul.appendChild(li);
       }
 

@@ -107,16 +107,15 @@ src="https://i.blogs.es/af15e2/windows-7-10-11/1366_2000.jpeg"/>
 <a class="whatsapp-float" href="https://wa.me/541158768929?text=Hola%2C%20Estoy%20Dispuesto%20a%20Entregar%20El%20Rosquete%20Por%20Un%20Servicio%20De%20vGvServ." target="_blank">
 <img alt="WhatsApp" src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/>
 </a>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    once: true,       // Ejecutar solo una vez
-    duration: 800,    // Duración de la animación en ms
-    offset: 100       // Inicia 100px antes de entrar en viewport
-  });
-</script>
 <script>
   const serviceImages = document.querySelectorAll('.servicio img');
+
+  document.addEventListener('touchstart', (e) => {
+    // Si se toca fuera de una imagen, quitar el efecto a todas
+    if (!e.target.closest('.servicio img')) {
+      serviceImages.forEach(img => img.classList.remove('lifted'));
+    }
+  });
 
   serviceImages.forEach((img) => {
     let touchStartY = 0;
@@ -132,12 +131,13 @@ src="https://i.blogs.es/af15e2/windows-7-10-11/1366_2000.jpeg"/>
       const timeDiff = Date.now() - touchStartTime;
       const swipeDistance = Math.abs(touchStartY - touchEndY);
 
-      // Si fue un swipe o un tap rápido
+      // Activar si fue swipe o toque rápido
       if (swipeDistance > 20 || timeDiff < 250) {
-        img.classList.add('lifted');
-        setTimeout(() => {
-          img.classList.remove('lifted');
-        }, 1000); // El efecto dura 1 segundo
+        // Quitar "lifted" de otras imágenes
+        serviceImages.forEach(i => i !== img && i.classList.remove('lifted'));
+
+        // Alternar estado de la imagen tocada
+        img.classList.toggle('lifted');
       }
     });
   });

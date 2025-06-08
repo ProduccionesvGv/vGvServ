@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       const modal = document.getElementById('image-modal');
-      modal.style.display = 'block';
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';;
       modal.querySelector('.modal-content').classList.add('modal-slide-in');
     });
   });
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('image-modal');
     modal.style.display = 'none';
     modal.querySelector('.modal-content').classList.remove('modal-slide-in');
+      document.body.style.overflow = '';
   });
 
   window.addEventListener('click', (event) => {
@@ -39,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (event.target === modal) {
       modal.style.display = 'none';
       modal.querySelector('.modal-content').classList.remove('modal-slide-in');
+      document.body.style.overflow = '';
     }
   });
 });

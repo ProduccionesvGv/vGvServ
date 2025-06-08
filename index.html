@@ -32,17 +32,33 @@
 <h2>Servicios</h2>
 <div class="servicios-grid">
 <div class="servicio">
-<img alt="Mantenimiento Interno" class="modal-trigger" data-description="Reemplazo de Pasta Térmica MX-6. Limpieza de Ventiladores. Limpieza de Mother con 2-propanol. Eliminación De Polvo de Componentes Internos. Limpieza de Gabinete/Carcasa" data-price="00.000$ ARS" data-title="Limpieza Interna" src="https://img.freepik.com/fotos-premium/limpieza-reparacion-prevencion-placa-base-procesador-computadora-portatil_131301-265.jpg"/>
+<img alt="Mantenimiento Interno" 
+class="modal-trigger" 
+data-aos="zoom-in" 
+data-description="Reemplazo de Pasta Térmica MX-6. Limpieza de Ventiladores. Limpieza de Mother con 2-propanol. Eliminación De Polvo de Componentes Internos. Limpieza de Gabinete/Carcasa" 
+data-price="00.000$ ARS" data-title="Limpieza Interna" src="https://img.freepik.com/fotos-premium/limpieza-reparacion-prevencion-placa-base-procesador-computadora-portatil_131301-265.jpg"/>
 <h3>Limpieza Interna</h3>
 <p>Eliminación de Polvo, Limpieza de Ventiladores y Cambio de Pasta Térmica.</p>
 </div>
 <div class="servicio">
-<img alt="Optimización del sistema" class="modal-trigger" data-description="Instalación de Office 365*. Instalación de Antivirus*. Optimización del sistema. Actualización de Controladores AMD/INTEL. Actualización de Controladores AUDIO/VIDEO. Revisión de Compatibilidad. Solución de Errores Comunes. NOTA*: Programas Activados LICENCIA ORIGINAL (Office365/Antivirus) - Antivirus Segun Disponibilidad (Norton / AVG / ESET / McAfee / Avast / Total AV)" data-price="00.000$ ARS" data-title="Software &amp; Drivers" src="https://i.ibb.co/mV1XsFbz/1366-2000.png"/>
+<img alt="Optimización del sistema" 
+class="modal-trigger" 
+data-aos="flip-left" 
+data-description="Instalación de Office 365*. Instalación de Antivirus*. Optimización del sistema. Actualización de Controladores AMD/INTEL. Actualización de Controladores AUDIO/VIDEO. NOTA*: Programas Activados LICENCIA ORIGINAL (Office365/Antivirus) - Antivirus Segun Disponibilidad (Norton / AVG / ESET / McAfee / Avast / Total AV)" 
+data-price="00.000$ ARS" 
+data-title="Software &amp; Drivers" 
+src="https://i.ibb.co/mV1XsFbz/1366-2000.png"/>
 <h3>Software &amp; Drivers</h3>
 <p>Actualizacion de Programas y Drivers Esenciales.</p>
 </div>
 <div class="servicio">
-<img alt="Diagnóstico general" class="modal-trigger" data-description="Instalacion Windows Microsoft 7/10/11 Activado. Formateo y Partición de Disco. Configuración Inicial. Instalación de Herramientas Esenciales." data-price="00.000$ ARS" data-title="Instalación De Windows" src="https://i.blogs.es/af15e2/windows-7-10-11/1366_2000.jpeg"/>
+<img alt="Diagnóstico general" 
+class="modal-trigger" 
+data-aos="slide-up" 
+data-description="Instalacion Windows Microsoft 7/10/11 Activado. Formateo y Partición de Disco. Configuración Inicial. Instalación de Herramientas Esenciales." 
+data-price="00.000$ ARS" 
+data-title="Instalación De Windows" 
+src="https://i.blogs.es/af15e2/windows-7-10-11/1366_2000.jpeg"/>
 <h3>Instalacion De Windows</h3>
 <p>Instalacion de Microsoft Windows Adecuado Para tu Computadora.</p>
 </div>
@@ -82,28 +98,50 @@
 </footer>
 <script src="js/script.js"></script>
 
+</div>
 <a class="whatsapp-float" href="https://wa.me/541158768929?text=Hola%2C%20Estoy%20Dispuesto%20a%20Entregar%20El%20Rosquete%20Por%20Un%20Servicio%20De%20vGvServ." target="_blank">
 <img alt="WhatsApp" src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"/>
 </a>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,       // Ejecutar solo una vez
+    duration: 800,    // Duración de la animación en ms
+    offset: 100       // Inicia 100px antes de entrar en viewport
+  });
+</script>
+<script>
+  const serviceImages = document.querySelectorAll('.servicio img');
+
+  serviceImages.forEach((img) => {
+    let touchStartY = 0;
+    let touchStartTime = 0;
+
+    img.addEventListener('touchstart', (e) => {
+      touchStartY = e.touches[0].clientY;
+      touchStartTime = Date.now();
+    });
+
+    img.addEventListener('touchend', (e) => {
+      const touchEndY = e.changedTouches[0].clientY;
+      const timeDiff = Date.now() - touchStartTime;
+      const swipeDistance = Math.abs(touchStartY - touchEndY);
+
+      // Si fue un swipe o un tap rápido
+      if (swipeDistance > 20 || timeDiff < 250) {
+        img.classList.add('lifted');
+        setTimeout(() => {
+          img.classList.remove('lifted');
+        }, 1000); // El efecto dura 1 segundo
+      }
+    });
+  });
+</script>
 <div class="modal" id="image-modal">
 <div class="modal-content">
 <span class="close-button">×</span>
 <h2 id="modal-title"></h2>
 <ul id="modal-description-list"></ul>
 </div>
-</div><script>
-document.querySelectorAll('.modal-close').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const modal = document.getElementById('image-modal');
-    modal.style.display = 'none';
-    document.body.style.overflow = '';
-  });
-});
-
-document.querySelectorAll('.modal-trigger').forEach(img => {
-  img.addEventListener('click', () => {
-    document.body.style.overflow = 'hidden';
-  });
-});
-</script></body>
+</body>
 </html>

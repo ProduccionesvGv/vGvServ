@@ -361,6 +361,10 @@ h1, h2, h3, h4, h5, h6 {
 .close-button {
   color: #fff;
   background-color: #ff4444;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
   border-radius: 50%;
   width: 32px;
   height: 32px;
@@ -381,6 +385,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Efecto lift automático al hacer scroll para todas las imágenes */
 .servicio img.lift-animation {
-  transform: translateY(-15px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transform: translateY(-30px) scale(1.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }

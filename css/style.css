@@ -176,7 +176,8 @@ body {
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #111;
+  color: #fff;
   margin: 10% auto;
   padding: 20px;
   border-radius: 8px;
@@ -239,7 +240,7 @@ body {
   font-weight: bold;
   font-size: 1.2em;
   margin-top: 10px;
-  color: #1a8917;
+  color: #00ffc3;
 }
 
 /* Estilo más intuitivo para las imágenes de los servicios */
@@ -349,4 +350,8 @@ h1, h2, h3, h4, h5, h6 {
 .contacto form input,
 .contacto form textarea {
   margin-bottom: 1rem;
+}
+
+.modal-content li {
+  color: #ccc;
 }

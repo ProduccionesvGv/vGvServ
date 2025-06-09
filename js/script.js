@@ -96,3 +96,28 @@ if (window.innerWidth <= 768) {
     imgs.forEach(img => observer.observe(img));
   });
 }
+
+
+// Animación lift temporal corregida (una sola vez)
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 768) {
+    const imgs = document.querySelectorAll('.servicio img');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.classList.add('lift-once');
+          setTimeout(() => {
+            img.classList.remove('lift-once');
+          }, 1200);
+          obs.unobserve(img);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -100px 0px',
+      threshold: 0.1
+    });
+    imgs.forEach(img => observer.observe(img));
+  }
+});

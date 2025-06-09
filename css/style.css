@@ -475,3 +475,71 @@ h1, h2, h3, h4, h5, h6 {
     width: 65%;
   }
 }
+
+
+
+/* === Mejoras visuales para tarjetas de servicio === */
+.servicio {
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 195, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 255, 195, 0.05);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.servicio:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(0, 255, 195, 0.1);
+}
+
+.servicio h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.servicio p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* Responsive móvil - tarjetas más compactas */
+@media (max-width: 768px) {
+  .servicio {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .servicio h3 {
+    font-size: 1rem;
+  }
+
+  .servicio p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animación al hacer scroll para las tarjetas */
+.servicio.lift-once {
+  animation: cardLift 1s ease-out;
+}
+
+@keyframes cardLift {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 4px 20px rgba(0,255,195,0.05);
+  }
+  50% {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,255,195,0.2);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 20px rgba(0,255,195,0.05);
+  }
+}

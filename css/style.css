@@ -447,3 +447,31 @@ h1, h2, h3, h4, h5, h6 {
 .servicio img.lift-once {
   animation: liftOnce 0.8s ease-in-out;
 }
+
+
+/* Diseño en columnas dentro del modal para contenido */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .modal-content h2 {
+    width: 30%;
+    font-size: 1.5rem;
+  }
+
+  #modal-description-list {
+    width: 65%;
+  }
+}

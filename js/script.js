@@ -121,3 +121,11 @@ document.addEventListener('DOMContentLoaded', () => {
     imgs.forEach(img => observer.observe(img));
   }
 });
+
+// Garantizar que el transform se resetee al final de la animación
+document.addEventListener('animationend', function (e) {
+  if (e.target.classList.contains('lift-once')) {
+    e.target.style.transform = 'none';
+    e.target.style.boxShadow = 'none';
+  }
+});

@@ -391,11 +391,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
-@keyframes liftOnce {
-  0% {
-    transform: scale(1);
-    box-shadow: none;
-  }
+
   50% {
     transform: translateY(-30px) scale(1.08);
     box-shadow: 0 12px 30px rgba(0,0,0,0.4);
@@ -407,4 +403,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 .servicio img.lift-once {
   animation: liftOnce 1.2s ease;
+}
+
+
+  40% {
+    transform: scale(1.08) translateY(-20px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    box-shadow: none;
+  }
+}
+.servicio img.lift-once {
+  animation: liftOnce 0.8s ease;
+}
+
+@keyframes liftOnce {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: none;
+  }
+}
+.servicio img.lift-once {
+  animation: liftOnce 0.8s ease-in-out;
 }

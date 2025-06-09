@@ -72,3 +72,27 @@ if (window.innerWidth <= 768) {
     imgs.forEach(img => observer.observe(img));
   });
 }
+
+
+// Animación lift temporal al hacer scroll (más notorio)
+if (window.innerWidth <= 768) {
+  document.addEventListener('DOMContentLoaded', () => {
+    const imgs = document.querySelectorAll('.servicio img');
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('lift-once');
+          setTimeout(() => {
+            entry.target.classList.remove('lift-once');
+          }, 1300);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -100px 0px',
+      threshold: 0.1
+    });
+    imgs.forEach(img => observer.observe(img));
+  });
+}

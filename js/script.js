@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.servicio').forEach(img => {
+  document.querySelectorAll('.modal-trigger').forEach(img => {
 
   // Asegurar que el modal inicia oculto
   const imageModal = document.getElementById('image-modal');
@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = '';
   }
     img.addEventListener('click', () => {
-      document.getElementById('modal-title').textContent = img.querySelector('img').dataset.title;
+      document.getElementById('modal-title').textContent = img.dataset.title;
 
       const ul = document.getElementById('modal-description-list');
       ul.innerHTML = "";
-      const items = img.querySelector('img').dataset.description.split(/\.\s*/);
+      const items = img.dataset.description.split(/\.\s*/);
       items.forEach(text => {
         if (text.trim()) {
           const li = document.createElement('li');
@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', function () {
       });
 
       // Añadir precio al final
-      if (img.querySelector('img').dataset.price) {
+      if (img.dataset.price) {
         const li = document.createElement('li');
-        li.innerHTML = `<strong>Precio:</strong> ${img.querySelector('img').dataset.price}`;
+        li.innerHTML = `<strong>Precio:</strong> ${img.dataset.price}`;
         ul.appendChild(li);
       }
 

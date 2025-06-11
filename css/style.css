@@ -548,7 +548,7 @@ h1, h2, h3, h4, h5, h6 {
 .slider-section {
   overflow: hidden;
   width: 100%;
-  height: var(--slider-height, 150px);
+  height: var(--slider-height, 105px);
   background-color: #111;
   display: flex;
   align-items: center;
@@ -569,7 +569,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .slide img {
   height: 100%;
-  max-height: var(--slider-height, 150px);
+  max-height: var(--slider-height, 105px);
   width: auto;
   object-fit: contain;
 }
@@ -581,4 +581,17 @@ h1, h2, h3, h4, h5, h6 {
   100% {
     transform: translateX(-50%);
   }
+}
+
+
+/* Mejora velocidad en móvil */
+@media (max-width: 768px) {
+  .slider-track {
+    animation-duration: 14s; /* más rápido en móvil */
+  }
+}
+
+/* Forzar espacio para más imágenes */
+.slider-track {
+  min-width: 200%;
 }

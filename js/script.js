@@ -129,21 +129,3 @@ document.addEventListener('animationend', function (e) {
     e.target.style.boxShadow = 'none';
   }
 });
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.getElementById("slider-track");
-  const clone = track.cloneNode(true);
-  track.parentNode.appendChild(clone);
-  let x = 0;
-  function animate() {
-    x -= 1;
-    if (Math.abs(x) >= track.scrollWidth) {
-      x = 0;
-    }
-    track.style.transform = `translateX(${x}px)`;
-    clone.style.transform = `translateX(${x + track.scrollWidth}px)`;
-    requestAnimationFrame(animate);
-  }
-  animate();
-});

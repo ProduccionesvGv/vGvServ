@@ -1,37 +1,655 @@
+:root {
+  --bg-dark: #111;
+  --bg-light: #1f1f1f;
+  --primary: #00ffc3;
+  --text-light: #eee;
+  --text-dark: #ccc;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+.site-header {
+  background-color: var(--bg-light);
+  padding: 1rem 0;
+}
+.site-header h1 {
+  color: var(--primary);
+}
+.main-nav ul {
+  list-style: none;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+.main-nav a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(to right, #222, #111);
+}
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+}
+.btn-cta {
+  background-color: var(--primary);
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.servicios, .testimonios, .contacto {
+  padding: 3rem 0;
+}
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.servicio img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.testimonial {
+  background-color: var(--bg-light);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--primary);
+}
+.contacto form {
+  flex-direction: column;
+  gap: 1rem;
+}
+.contacto input, .contacto textarea {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: var(--text-light);
+}
+.contacto button {
+  background-color: var(--primary);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.whatsapp-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #25d366;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+}
+.site-footer {
+  background-color: #000;
+  padding: 1rem 0;
+  text-align: center;
+  color: var(--text-dark);
+}
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN - MOBILE
+   ================================ */
+@media (max-width: 768px) {
+  header.site-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .container, main, section {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+
+.modal-content {
+  position: relative;
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 95vw;
+  max-width: none;
+  margin: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+}
+
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-slide-in {
+  animation: slideInFromBottom 0.4s ease-out;
+}
+
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.whatsapp-float img {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s;
+}
+
+.whatsapp-float img:hover {
+  transform: scale(1.1);
+}
+
+
+#modal-description-list li:last-child {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 10px;
+  color: #00ffc3;
+}
+
+/* Estilo más intuitivo para las imágenes de los servicios */
+.servicio img.lifted {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.servicio img {
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.servicio img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+/* Centrado de secciones */
+.container, .hero, .servicio, .testimonios, .contacto {
+  text-align: center;
+}
+
+/* Modal overlay y centrado */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  position: relative;
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 95vw;
+  max-width: none;
+  margin: auto;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+
+/* Responsividad móvil */
+@media (max-width: 768px) {
+  .servicios-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Mejoras estéticas móviles: más espacio y efecto intuitivo */
+@media (max-width: 768px) {
+  .servicios-grid {
+    gap: 2rem !important;
+  }
+  .servicio {
+    margin-bottom: 2rem;
+  }
+  .servicio img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
+  }
+  .servicio img:active {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+}
+
+/* Efecto lift automático al hacer scroll en móviles */
+@media (max-width: 768px) {
+  .servicio img {
+    transition: transform 0.6s ease-out, box-shadow 0.6s ease-out;
+  }
+  .servicio img.lift-animation {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+}
+
+/* ==========================================
+   Fuentes: Open Sans para texto, Montserrat para encabezados
+   ========================================== */
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ==========================================
+   Contacto: alinear a la izquierda y ajustar ancho
+   ========================================== */
+.contacto .container {
+  text-align: left;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.contacto form input,
+.contacto form textarea,
+.contacto form button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Opcional: mejorar separación de campos */
+.contacto form input,
+.contacto form textarea {
+  margin-bottom: 1rem;
+}
+
+.modal-content li {
+  color: #ccc;
+}
+
+
+/* Botón de cerrar modal más visible en modo oscuro */
+.close-button {
+  color: #fff;
+  background-color: #ff4444;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  line-height: 32px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 1001;
+  transition: background-color 0.3s ease;
+}
+.close-button:hover {
+  background-color: #ff0000;
+}
+
+/* Efecto lift automático al hacer scroll para todas las imágenes */
+.servicio img.lift-animation {
+  transform: translateY(-30px) scale(1.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+}
+
+
+  50% {
+    transform: translateY(-30px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+.servicio img.lift-once {
+  animation: liftOnce 1.2s ease;
+}
+
+
+  40% {
+    transform: scale(1.08) translateY(-20px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    box-shadow: none;
+  }
+}
+.servicio img.lift-once {
+  animation: liftOnce 0.8s ease;
+}
+
+@keyframes liftOnce {
+  0% {
+    transform: translateY(0) scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: none;
+  }
+}
+.servicio img.lift-once {
+  animation: liftOnce 0.8s ease-in-out;
+}
+
+
+/* Diseño en columnas dentro del modal para contenido */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .modal-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .modal-content h2 {
+    width: 30%;
+    font-size: 1.5rem;
+  }
+
+  #modal-description-list {
+    width: 65%;
+  }
+}
+
+
+
+/* === Mejoras visuales para tarjetas de servicio === */
+.servicio {
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  border-radius: 12px;
+  border: 1.0px solid var(--primary);
+  box-shadow: 0 4px 20px rgba(0, 255, 195, 0.05);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.servicio:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(0, 255, 195, 0.1);
+}
+
+.servicio h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.servicio p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+/* Responsive móvil - tarjetas más compactas */
+@media (max-width: 768px) {
+  .servicio {
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .servicio h3 {
+    font-size: 1rem;
+  }
+
+  .servicio p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animación al hacer scroll para las tarjetas */
+.servicio.lift-once {
+  animation: cardLift 1s ease-out;
+}
+
+@keyframes cardLift {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 4px 20px rgba(0,255,195,0.05);
+  }
+  50% {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,255,195,0.2);
+  }
+  100% {
+    transform: translateY(0);
+    box-shadow: 0 4px 20px rgba(0,255,195,0.05);
+  }
+}
+
 
 .slider-section {
   width: 100%;
-  overflow: hidden;
-  height: var(--slider-height, 67px);
   background-color: #111;
+  overflow: hidden;
+  height: 80px;
   display: flex;
   align-items: center;
-  margin: 0.25rem 0;
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .slider-track {
   display: flex;
-  width: calc(300% * 100vw); /* suficiente ancho para contener 3 secuencias */
-  animation: scrollInfinite 20s linear infinite;
+  gap: 1rem;
+  position: relative;
+  animation: none;
 }
 
-.slide {
-  flex: 0 0 auto;
-  padding: 0 0.1rem;
-}
-
-.slide img {
+.slider-track img {
   height: 100%;
-  max-height: var(--slider-height, 67px);
   width: auto;
+  max-height: 80px;
   object-fit: contain;
 }
 
-@keyframes scrollInfinite {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-33.333%);
-  }
+/* Corrección de centrado */
+
+.slider-section {
+  width: 100%;
+  background-color: #111;
+  overflow: hidden;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slider-track {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  animation: none;
+}
+
+.slider-track img {
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Ajuste final de centrado vertical total */
+
+.slider-section {
+  width: 100%;
+  background-color: #111;
+  overflow: hidden;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slider-track {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  animation: none;
+  height: 100%;
+}
+
+.slider-track img {
+  max-height: 100%;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Centrado vertical y tamaño natural para imágenes */
+
+.slider-track img {
+  max-height: 80px;
+  height: auto;
+  width: auto;
+  display: block;
+  margin: auto 0;
 }

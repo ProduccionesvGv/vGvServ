@@ -833,3 +833,47 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 80px;
   }
 }
+
+/* Centrado profesional con object-fit y .slide contenedor */
+
+.slider-section {
+  width: 100%;
+  background-color: #111;
+  overflow: hidden;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.slider-track {
+  display: flex;
+  gap: 0;
+  animation: none;
+  height: 100%;
+}
+
+.slide {
+  height: 80px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.slide img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}

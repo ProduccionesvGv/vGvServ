@@ -557,7 +557,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .slider-track {
-  min-width: 300%;
+  min-width: 500%;
   display: flex;
   width: max-content;
   animation: scrollSlider var(--slider-speed, 40s) linear infinite;
@@ -575,10 +575,16 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: contain;
 }
 
+
 @keyframes scrollSlider {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
   100% {
     transform: translateX(-50%);
   }
@@ -588,13 +594,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Mejora velocidad en móvil */
 @media (max-width: 768px) {
   .slider-track {
-  min-width: 300%;
+  min-width: 500%;
     animation-duration: 4.35s; /* más rápido en móvil */
   }
 }
 
 /* Forzar espacio para más imágenes */
 .slider-track {
-  min-width: 300%;
-  min-width: 200%;
+  min-width: 500%;
+  min-width: 500%;
 }

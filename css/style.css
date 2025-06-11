@@ -12,6 +12,7 @@ html { background: #000 !important; }
   padding: 0;
 }
 body {
+overflow-x: hidden;
   font-family: 'Segoe UI', sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-light);
@@ -42,7 +43,7 @@ body {
 .hero {
   padding: 0.2rem 0;
   text-align: center;
-  background: linear-gradient(to right, #222, #111);
+  background-color: #000 !important;
 }
 .hero h2 {
   font-size: 2rem;
@@ -158,6 +159,7 @@ body {
   }
 
   body {
+overflow-x: hidden;
     overflow-x: hidden;
   }
 }
@@ -338,6 +340,7 @@ body {
    Fuentes: Open Sans para texto, Montserrat para encabezados
    ========================================== */
 body {
+overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -549,28 +552,24 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Full-width slider touching viewport edges */
 .infinite-slider {
-  width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
-  margin-top: -1rem;
-  margin-bottom: 2rem;
-  padding: 0 !important;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 0;
   background: #000 !important;
 }
 
 .infinite-slider {
-  width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
-  margin-top: -1rem;
-  margin-bottom: 2rem;
-  padding: 0 !important;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 0;
   background: #000 !important;
 }
 
 .slider-track {
   display: flex;
-  width: 2800px; /* 200px * 14 imágenes */
+  min-width: max-content;
   animation: scroll 20s linear infinite;
 }
 
@@ -592,7 +591,7 @@ h1, h2, h3, h4, h5, h6 {
   .hero {
   padding: 0.2rem 0;
   text-align: center;
-  background: linear-gradient(to right, #222, #111);
+  background-color: #000 !important;
 }
   .contacto {
     padding: 0.5rem 0;  /* reduce padding vertical para acercar sección de contacto */
@@ -609,6 +608,7 @@ a, h1, h2, h3, h4, h5, h6, p, li {
 /* Mobile-specific overrides to enforce background and reduce spacing */
 @media (max-width: 768px) {
   body {
+overflow-x: hidden;
     background: #000 !important;
     color: #fff !important;
   }
@@ -617,12 +617,10 @@ a, h1, h2, h3, h4, h5, h6, p, li {
     margin: 0 !important;
   }
   .infinite-slider {
-  width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
-  margin-top: -1rem;
-  margin-bottom: 2rem;
-  padding: 0 !important;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 0;
   background: #000 !important;
 }
 }
@@ -630,16 +628,15 @@ a, h1, h2, h3, h4, h5, h6, p, li {
 
 /* Override any gradient or colored backgrounds with solid black */
 html, body {
+overflow-x: hidden;
   background: #000 !important;
   background-image: none !important;
 }
 .infinite-slider {
-  width: 100vw !important;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
-  margin-top: -1rem;
-  margin-bottom: 2rem;
-  padding: 0 !important;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0 auto;
+  padding: 0;
   background: #000 !important;
 }
 
@@ -652,7 +649,7 @@ header, .site-header {
 .hero {
   padding: 0.2rem 0;
   text-align: center;
-  background: linear-gradient(to right, #222, #111);
+  background-color: #000 !important;
 }
 
 
@@ -660,7 +657,7 @@ header, .site-header {
 .hero {
   padding: 0.2rem 0;
   text-align: center;
-  background: linear-gradient(to right, #222, #111);
+  background-color: #000 !important;
 }
 
 

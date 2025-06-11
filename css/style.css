@@ -644,3 +644,10 @@ header, .site-header {
 .main-nav ul li a {
   color: #ADFF2F !important;
 }
+
+
+/* Estilo para texto negro en inputs y textarea de la sección de contacto */
+#form-contacto input,
+#form-contacto textarea {
+  color: #000 !important;
+}

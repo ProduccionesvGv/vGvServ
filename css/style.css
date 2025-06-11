@@ -553,10 +553,11 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 .slider-track {
+  min-width: 300%;
   display: flex;
   width: max-content;
   animation: scrollSlider var(--slider-speed, 40s) linear infinite;
@@ -587,11 +588,13 @@ h1, h2, h3, h4, h5, h6 {
 /* Mejora velocidad en móvil */
 @media (max-width: 768px) {
   .slider-track {
-    animation-duration: 14s; /* más rápido en móvil */
+  min-width: 300%;
+    animation-duration: 9.8s; /* más rápido en móvil */
   }
 }
 
 /* Forzar espacio para más imágenes */
 .slider-track {
+  min-width: 300%;
   min-width: 200%;
 }

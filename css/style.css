@@ -87,7 +87,7 @@ body {
   padding: 0.8rem;
   border: none;
   border-radius: 5px;
-  background-color: #333;
+  background-color: #fff;
   color: var(--text-light);
 }
 .contacto button {
@@ -578,4 +578,10 @@ h1, h2, h3, h4, h5, h6 {
   .contacto {
     padding: 1rem 0;  /* reduce padding vertical para acercar sección de contacto */
   }
+}
+
+
+/* Force white text on darker backgrounds */
+a, h1, h2, h3, h4, h5, h6, p, li {
+  color: #fff;
 }

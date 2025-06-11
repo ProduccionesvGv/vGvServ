@@ -638,3 +638,9 @@ header, .site-header {
 .hero {
   background: none !important;
 }
+
+
+/* Verde-amarillo para navegación principal */
+.main-nav ul li a {
+  color: #ADFF2F !important;
+}

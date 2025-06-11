@@ -39,7 +39,7 @@ body {
   text-decoration: none;
 }
 .hero {
-  padding: 1rem 0;
+  padding: 2rem 0;
   text-align: center;
   background: linear-gradient(to right, #222, #111);
 }
@@ -567,4 +567,15 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-1400px); } /* 200px * 7 imágenes */
+}
+
+
+/* Ajustes para móviles: reducir espacios arriba del slider y contacto */
+@media (max-width: 768px) {
+  .hero {
+    padding: 1rem 0;  /* reduce padding vertical para acercar el slider */
+  }
+  .contacto {
+    padding: 1rem 0;  /* reduce padding vertical para acercar sección de contacto */
+  }
 }

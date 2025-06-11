@@ -40,7 +40,7 @@ body {
   text-decoration: none;
 }
 .hero {
-  padding: 0.5rem 0;
+  padding: 0.2rem 0;
   text-align: center;
   background: linear-gradient(to right, #222, #111);
 }
@@ -552,13 +552,20 @@ h1, h2, h3, h4, h5, h6 {
   width: 100vw !important;
   margin-left: calc(50% - 50vw) !important;
   margin-right: calc(50% - 50vw) !important;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
   padding: 0 !important;
+  background: #000 !important;
 }
 
 .infinite-slider {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  padding: 0 !important;
+  background: #000 !important;
 }
 
 .slider-track {
@@ -583,8 +590,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Ajustes para móviles: reducir espacios arriba del slider y contacto */
 @media (max-width: 768px) {
   .hero {
-    padding: 0.5rem 0;  /* reduce padding vertical para acercar el slider */
-  }
+  padding: 0.2rem 0;
+  text-align: center;
+  background: linear-gradient(to right, #222, #111);
+}
   .contacto {
     padding: 0.5rem 0;  /* reduce padding vertical para acercar sección de contacto */
   }
@@ -608,9 +617,14 @@ a, h1, h2, h3, h4, h5, h6, p, li {
     margin: 0 !important;
   }
   .infinite-slider {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-  }
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  padding: 0 !important;
+  background: #000 !important;
+}
 }
 
 
@@ -620,6 +634,12 @@ html, body {
   background-image: none !important;
 }
 .infinite-slider {
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  padding: 0 !important;
   background: #000 !important;
 }
 
@@ -630,13 +650,17 @@ header, .site-header {
   padding: 0 !important;
 }
 .hero {
-  padding-top: 0 !important;
+  padding: 0.2rem 0;
+  text-align: center;
+  background: linear-gradient(to right, #222, #111);
 }
 
 
 /* Remove background behind the hero text, keep it black */
 .hero {
-  background: none !important;
+  padding: 0.2rem 0;
+  text-align: center;
+  background: linear-gradient(to right, #222, #111);
 }
 
 

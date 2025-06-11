@@ -1,3 +1,4 @@
+html { background: #000 !important; }
 :root {
   --bg-dark: #111;
   --bg-light: #1f1f1f;
@@ -601,4 +602,24 @@ a, h1, h2, h3, h4, h5, h6, p, li {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
+}
+
+
+/* Override any gradient or colored backgrounds with solid black */
+html, body {
+  background: #000 !important;
+  background-image: none !important;
+}
+.infinite-slider {
+  background: #000 !important;
+}
+
+
+/* Reduce space between header and slider, and force header background to black */
+header, .site-header {
+  background: #000 !important;
+  padding: 0 !important;
+}
+.hero {
+  padding-top: 0 !important;
 }

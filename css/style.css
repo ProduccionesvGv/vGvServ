@@ -623,3 +623,9 @@ header, .site-header {
 .hero {
   padding-top: 0 !important;
 }
+
+
+/* Remove background behind the hero text, keep it black */
+.hero {
+  background: none !important;
+}

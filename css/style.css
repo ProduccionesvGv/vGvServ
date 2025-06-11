@@ -498,7 +498,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .servicio h3 {
-  margin: 0.5rem 0;
+  margin: 0.25rem 0;
   font-size: 1.2rem;
   color: var(--primary);
 }
@@ -548,12 +548,12 @@ h1, h2, h3, h4, h5, h6 {
 .slider-section {
   overflow: hidden;
   width: 100%;
-  height: var(--slider-height, 84px);
+  height: var(--slider-height, 67px);
   background-color: #111;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0.5rem 0;
+  margin: 0.25rem 0;
 }
 
 .slider-track {
@@ -570,7 +570,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .slide img {
   height: 100%;
-  max-height: var(--slider-height, 84px);
+  max-height: var(--slider-height, 67px);
   width: auto;
   object-fit: contain;
 }
@@ -589,7 +589,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .slider-track {
   min-width: 300%;
-    animation-duration: 6.53s; /* más rápido en móvil */
+    animation-duration: 4.35s; /* más rápido en móvil */
   }
 }
 

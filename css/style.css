@@ -565,7 +565,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .slide {
   flex: 0 0 auto;
-  padding: 0 1rem;
+  padding: 0 0.1rem;
 }
 
 .slide img {
@@ -601,7 +601,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .slider-track {
   min-width: 300%;
-    animation-duration: 4.35s; /* más rápido en móvil */
+    animation-duration: 2.9s; /* más rápido en móvil */
   }
 }
 

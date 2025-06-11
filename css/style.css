@@ -585,3 +585,20 @@ h1, h2, h3, h4, h5, h6 {
 a, h1, h2, h3, h4, h5, h6, p, li {
   color: #fff;
 }
+
+
+/* Mobile-specific overrides to enforce background and reduce spacing */
+@media (max-width: 768px) {
+  body {
+    background: #000 !important;
+    color: #fff !important;
+  }
+  .hero, .servicios, .informacion, .contacto {
+    padding: 0.25rem 0 !important;
+    margin: 0 !important;
+  }
+  .infinite-slider {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}

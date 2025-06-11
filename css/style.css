@@ -546,6 +546,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Slider infinito */
+
+/* Full-width slider touching viewport edges */
+.infinite-slider {
+  width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding: 0 !important;
+}
+
 .infinite-slider {
   position: relative;
   width: 100%;

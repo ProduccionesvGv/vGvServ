@@ -570,7 +570,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .slider-track {
   display: flex;
-  min-width: max-content;
+  width: calc(200px * 14); /* 14 imágenes (duplicadas) */
   animation: scroll 20s linear infinite;
 }
 
@@ -584,6 +584,8 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes scroll {
   0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
   100% { transform: translateX(-1400px); } /* 200px * 7 imágenes */
 }
 

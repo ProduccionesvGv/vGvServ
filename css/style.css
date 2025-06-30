@@ -724,3 +724,16 @@ header, .site-header {
 #form-contacto textarea {
   color: #000 !important;
 }
+
+
+.main-nav ul li {
+  background-color: rgba(0, 255, 195, 0.08);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  transition: background-color 0.3s ease;
+}
+
+.main-nav ul li:hover {
+  background-color: rgba(0, 255, 195, 0.2);
+}

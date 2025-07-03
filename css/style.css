@@ -681,3 +681,15 @@ header, .site-header {
 .menu-box:hover {
   transform: scale(1.05);
 }
+
+
+@media (max-width: 768px) {
+  .menu-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-box {
+    width: 80%;
+  }
+}

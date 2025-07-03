@@ -704,3 +704,9 @@ header, .site-header {
 .menu-item:hover {
   background: rgba(0, 255, 136, 0.3);
 }
+
+
+nav a {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+}

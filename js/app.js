@@ -5,7 +5,7 @@ let DATA = [
     title: 'Phantom Ice',
     subtitle: 'Feminizada · Hibrida',
     price_ars: 18999,
-    badge: 'TOP',
+    badge: 'x4',
     // Imagen de relleno con SVG embebido (puedes reemplazar por tu propia ruta/URL)
     image: 'https://ibb.co/svJvGv3R' + encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
@@ -36,7 +36,7 @@ let DATA = [
     title: 'La Messias ',
     subtitle: 'Feminizada · Sativa',
     price_ars: 20999,
-    badge: 'NUEVA',
+    badge: 'x5',
     image: 'data:image/svg+xml;utf8,' + encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
         <defs>
@@ -65,7 +65,7 @@ let DATA = [
     title: 'Craig',
     subtitle: 'Feminizada · Índica',
     price_ars: 19999,
-    badge: 'HOT',
+    badge: 'x4',
     image: 'data:image/svg+xml;utf8,' + encodeURIComponent(`
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
         <defs>
@@ -123,7 +123,20 @@ let DATA = [
 const $carousel = document.getElementById('carousel');
 const $prev = document.getElementById('prevBtn');
 const $next = document.getElementById('nextBtn');
+
+// Garantiza 3 imágenes por variedad
+function ensureGallery(item){
+  if(Array.isArray(item.gallery) && item.gallery.length === 3){ return item.gallery; }
+  let fallback = 'img/gorilla.jpg';
+  if(item.id === 'lemon-haze-fem') fallback = 'img/lemon.jpg';
+  if(item.id === 'cookies-kush') fallback = 'img/cookies.jpg';
+  if(item.id !== 'gorilla-glue-auto' && item.image) fallback = item.image;
+  item.gallery = [fallback, fallback, fallback];
+  return item.gallery;
+}
 const $specsCard = document.getElementById('specsCard');
+const $specsGallery = document.getElementById('specsGallery');
+const $specName = document.getElementById('specName');
 // Helper para setear mensaje predefinido en WhatsApp
 function setWhatsAppMessage(text){
   const wa = document.querySelector('.whatsapp-float');
@@ -199,6 +212,14 @@ function showSpecs(id){
   if(!item){ return; }
 
   const { banco, genetica, floracion, thc, rendimiento, sabor, notas } = item.specs;
+
+  // Título verde
+  if($specName){ $specName.textContent = item.title; }
+  // Galería vertical 3 imágenes
+  if($specsGallery){
+    const imgs = ensureGallery(item).map((src,i)=>`<img src="${src}" alt="${item.title} ${i+1}" loading="lazy">`).join('');
+    $specsGallery.innerHTML = imgs;
+  }
 
   $specsCard.innerHTML = `
     <div class="spec-grid">

@@ -1,131 +1,34 @@
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.servicio').forEach(servicio => {
-
-  // Asegurar que el modal inicia oculto
-  const imageModal = document.getElementById('image-modal');
-  if (imageModal) {
-    imageModal.style.display = 'none';
-    document.body.style.overflow = '';
-  }
-    servicio.addEventListener('click', () => {
-      document.getElementById('modal-title').textContent = servicio.querySelector('.modal-trigger').dataset.title;
-
-      const ul = document.getElementById('modal-description-list');
-      ul.innerHTML = "";
-      const items = servicio.querySelector('.modal-trigger').dataset.description.split(/\.\s*/);
-      items.forEach(text => {
-        if (text.trim()) {
-          const li = document.createElement('li');
-          li.textContent = text.trim();
-          ul.appendChild(li);
-        }
-      });
-
-      // Añadir precio al final
-      if (servicio.querySelector('.modal-trigger').dataset.price) {
-        const li = document.createElement('li');
-        li.innerHTML = `<strong>Precio:</strong> ${servicio.querySelector('.modal-trigger').dataset.price}`;
-        ul.appendChild(li);
-      }
-
-      const modal = document.getElementById('image-modal');
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';;
-      modal.querySelector('.modal-content').classList.add('modal-slide-in');
-    });
+// ==========================
+// SWIPE EN MÓVIL PARA EL CARRUSEL
+// ==========================
+const carousel = document.querySelector('.carousel');
+if (carousel) {
+  let startX;
+  carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
   });
-
-  document.querySelector('.close-button').addEventListener('click', () => {
-    const modal = document.getElementById('image-modal');
-    modal.style.display = 'none';
-    modal.querySelector('.modal-content').classList.remove('modal-slide-in');
-      document.body.style.overflow = '';
-  });
-
-  window.addEventListener('click', (event) => {
-    const modal = document.getElementById('image-modal');
-    if (event.target === modal) {
-      modal.style.display = 'none';
-      modal.querySelector('.modal-content').classList.remove('modal-slide-in');
-      document.body.style.overflow = '';
+  carousel.addEventListener('touchend', (e) => {
+    let endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) {
+      document.getElementById('nextBtn').click();
+    } else if (endX - startX > 50) {
+      document.getElementById('prevBtn').click();
     }
   });
-});
-
-// Efecto lift automático en móviles
-if (window.innerWidth <= 768) {
-  document.addEventListener('DOMContentLoaded', () => {
-    const imgs = document.querySelectorAll('.servicio');
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('lift-animation');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, {
-      root: null,
-      rootMargin: '0px 0px -100px 0px',
-      threshold: 0.1
-    });
-    imgs.forEach(img => observer.observe(img));
-  });
 }
 
-
-// Animación lift temporal al hacer scroll (más notorio)
-if (window.innerWidth <= 768) {
-  document.addEventListener('DOMContentLoaded', () => {
-    const imgs = document.querySelectorAll('.servicio');
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('lift-once');
-          setTimeout(() => {
-            entry.target.classList.remove('lift-once');
-          }, 1300);
-          obs.unobserve(entry.target);
-        }
-      });
-    }, {
-      root: null,
-      rootMargin: '0px 0px -100px 0px',
-      threshold: 0.1
-    });
-    imgs.forEach(img => observer.observe(img));
+// ==========================
+// MENÚ HAMBURGUESA
+// ==========================
+const toggleBtn = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('nav');
+if (toggleBtn && navMenu) {
+  toggleBtn.addEventListener('click', () => {
+    if (navMenu.style.display === 'flex') {
+      navMenu.style.display = 'none';
+    } else {
+      navMenu.style.display = 'flex';
+    }
   });
 }
-
-
-// Animación lift temporal corregida (una sola vez)
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.innerWidth <= 768) {
-    const imgs = document.querySelectorAll('.servicio');
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          img.classList.add('lift-once');
-          setTimeout(() => {
-            img.classList.remove('lift-once');
-          }, 1200);
-          obs.unobserve(img);
-        }
-      });
-    }, {
-      root: null,
-      rootMargin: '0px 0px -100px 0px',
-      threshold: 0.1
-    });
-    imgs.forEach(img => observer.observe(img));
-  }
-});
-
-// Garantizar que el transform se resetee al final de la animación
-document.addEventListener('animationend', function (e) {
-  if (e.target.classList.contains('lift-once')) {
-    e.target.style.transform = 'none';
-    e.target.style.boxShadow = 'none';
-  }
-});

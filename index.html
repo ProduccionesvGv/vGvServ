@@ -1,150 +1,61 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Mantenimiento Pc &amp; Notebook| vGvServ Zona Oeste</title>
-<link href="css/style.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/></head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Variedades Campeonas | Demo</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
 <body>
-<header class="site-header">
-<div class="container">
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Variedades Campeonas</h1>
+      <p class="site-subtitle">Catálogo simple con carrusel, títulos, subtítulos y precio</p>
+    </div>
+  </header>
 
-<nav class="main-nav">
+  <main>
+    <section class="carousel-section">
+      <div class="container row-between">
+        <h2 class="section-title">Nuestras Genéticas</h2>
+        <div class="controls">
+          <button class="ctrl" id="prevBtn" aria-label="Anterior">‹</button>
+          <button class="ctrl" id="nextBtn" aria-label="Siguiente">›</button>
+        </div>
+      </div>
 
-<div class="menu-container">
-<div class="menu-box"><a href="#servicios">Servicios</a></div>
-<div class="menu-box"><a href="#testimonios">Información</a></div>
-<div class="menu-box"><a href="#contacto">Contacto</a></div>
-</div>
+      <div class="carousel-wrapper">
+        <div class="carousel" id="carousel" aria-label="Listado de productos" tabindex="0">
+          <!-- Las tarjetas se inyectan desde JS usando la lista DATA -->
+        </div>
+      </div>
+      <p class="hint container">Desliza con el dedo o con la rueda del mouse, o usa los botones.</p>
+    </section>
 
-</nav>
-</div>
-</header>
-<section class="hero">
-<div class="container">
-<section class="infinite-slider">
-<div class="slider-track">
-<img alt="01" src="https://i.postimg.cc/T3r3HmLK/01.png"/>
-<img alt="02" src="https://i.postimg.cc/Bv4nW6HM/02.png"/>
-<img alt="03" src="https://i.postimg.cc/xd5T92PY/03.png"/>
-<img alt="04" src="https://i.postimg.cc/ydN6dbfR/04.png"/>
-<img alt="05" src="https://i.postimg.cc/RFbSnL8D/05.png"/>
-<img alt="06" src="https://i.postimg.cc/d3kqRTct/06.png"/>
-<img alt="07" src="https://i.postimg.cc/7hFqKYq1/07.png"/>
-<img alt="01" src="https://i.postimg.cc/T3r3HmLK/01.png"/>
-<img alt="02" src="https://i.postimg.cc/Bv4nW6HM/02.png"/>
-<img alt="03" src="https://i.postimg.cc/xd5T92PY/03.png"/>
-<img alt="04" src="https://i.postimg.cc/ydN6dbfR/04.png"/>
-<img alt="05" src="https://i.postimg.cc/RFbSnL8D/05.png"/>
-<img alt="06" src="https://i.postimg.cc/d3kqRTct/06.png"/>
-<img alt="07" src="https://i.postimg.cc/7hFqKYq1/07.png"/>
-</div>
-</section>
-<h2>Mantenimiento Profesional Para Tu Ordenador</h2>
-<p>Mejora el Rendimiento, La vida útil y la estética de tu equipo con el servicio técnico Especializado.</p>
-<a class="btn-cta" href="#contacto">Solicita tu mantenimiento</a>
-</div>
-</section>
-<section class="servicios" id="servicios">
-<div class="container">
-<h2>Servicios</h2>
-<div class="servicios-grid">
-<div class="servicio">
-<img alt="Mantenimiento Interno" class="modal-trigger" data-aos="zoom-in" data-description="Reemplazo de Pasta Térmica MX-6. Limpieza de Ventiladores. Limpieza de Mother con 2-Propanol. Eliminación De Polvo de Componentes Internos. Limpieza de Gabinete/Carcasa" data-price="00.000$ ARS" data-title="Limpieza Interna" src="https://img.freepik.com/fotos-premium/limpieza-reparacion-prevencion-placa-base-procesador-computadora-portatil_131301-265.jpg">
-<h3>Limpieza Interna</h3>
-<p>Eliminación de Polvo, Limpieza de Ventiladores y Cambio de Pasta Térmica.</p>
-</img></div>
-<div class="servicio">
-<img alt="Optimización del sistema" class="modal-trigger" data-aos="flip-left" data-description="Instalación de Office 365*. Instalación de Antivirus*. Optimización del sistema. Actualización de Controladores AMD/INTEL. Actualización de Controladores AUDIO/VIDEO. " data-price="00.000$ ARS" data-title="Software &amp; Drivers" src="https://i.ibb.co/mV1XsFbz/1366-2000.png">
-<h3>Software &amp; Drivers</h3>
-<p>Actualizacion de Programas y Drivers Esenciales.</p>
-</img></div>
-<div class="servicio">
-<img alt="Diagnóstico general" class="modal-trigger" data-aos="slide-up" data-description="Instalacion Windows Microsoft 7/10/11 Activado. Formateo y Partición de Disco. Configuración Inicial. Instalación de Herramientas Esenciales." data-price="00.000$ ARS" data-title="Instalación De Windows" src="https://i.blogs.es/af15e2/windows-7-10-11/1366_2000.jpeg">
-<h3>Instalacion De Windows</h3>
-<p>Instalacion de Microsoft Windows Adecuado Para tu Computadora.</p>
-</img></div>
-</div>
-</div>
-</section>
-<section class="testimonios" id="testimonios">
-<div class="container">
-<h2>INFO</h2>
-<div class="testimonial">
-<p>- Un ordenador limpio funciona de manera más eficiente, ya que los componentes pueden disipar el calor Correctamente.
-</p>
-<span>- Al evitar el sobrecalentamiento y otros problemas causados por la acumulación de polvo, se prolonga la vida útil de los componentes internos del Ordenador.</span>
-</div>
-<div class="testimonial">
-<p>- Con el tiempo, el Ordenador puede acumular archivos temporales, software innecesario y errores que ralentizan su Funcionamiento.</p>
-<span>- Formatear borra estos elementos y permite que el ordenador vuelva a funcionar como Nuevo.</span>
-</div>
-</div>
-</section>
-<section class="contacto" id="contacto">
-<div class="container">
-<h2>Contacto</h2>
-<form id="form-contacto">
-<input name="nombre" placeholder="Tu nombre" required="" type="text"/>
-<input name="email" placeholder="Tu correo electrónico" required="" type="email"/>
-<textarea name="mensaje" placeholder="Tu mensaje" required="" rows="5"></textarea>
-<button type="submit">Enviar mensaje</button>
-</form>
-<a class="whatsapp-btn" href="https://wa.me/541158768929?text=Hola%2C%20Estoy%20Dispuesto%20a%20Entregar%20El%20Rosquete%20Por%20Un%20Servicio%20De%20vGvServ." target="_blank">💬 WhatsApp</a>
-</div>
-</section>
-<footer class="site-footer">
-<div class="container">
-<p>© 2025 vGvServ - Todos Los Derechos Reservados. https://gofile.io/d/mkBpKX 
-https://1fichier.com/?3mts3f2o012gbgqg7ftp</p>
-</div>
-</footer>
-<script src="js/script.js"></script>
-<a class="whatsapp-float" href="https://wa.me/541158768929?text=Hola%2C%20Estoy%20Dispuesto%20a%20Entregar%20El%20Rosquete%20Por%20Un%20Servicio%20De%20vGvServ." target="_blank">
-<img alt="WhatsApp" src="https://img.icons8.com/color/48/000000/whatsapp--v1.png">
-</img></a>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    once: true,       // Ejecutar solo una vez
-    duration: 800,    // Duración de la animación en ms
-    offset: 100       // Inicia 100px antes de entrar en viewport
-  });
-</script>
-<script>
-  const serviceImages = document.querySelectorAll('.servicio img');
+    <section class="specs-section" id="specs">
+      <div class="container">
+        <h3 class="specs-title">Especificaciones</h3>
+        <div class="specs-card" id="specsCard">
+          <p class="muted">Haz clic en una imagen del carrusel para ver las especificaciones aquí abajo.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  serviceImages.forEach((img) => {
-    let touchStartY = 0;
-    let touchStartTime = 0;
+  
+  <footer class="site-footer">
+    <div class="container" id="footerDynamic">
+      <small class="muted">Selecciona una genética para ver su título aquí.</small>
+    </div>
+  </footer>
 
-    img.addEventListener('touchstart', (e) => {
-      touchStartY = e.touches[0].clientY;
-      touchStartTime = Date.now();
-    });
 
-    img.addEventListener('touchend', (e) => {
-      const touchEndY = e.changedTouches[0].clientY;
-      const timeDiff = Date.now() - touchStartTime;
-      const swipeDistance = Math.abs(touchStartY - touchEndY);
-
-      // Si fue un swipe o un tap rápido
-      if (swipeDistance > 20 || timeDiff < 250) {
-        img.classList.add('lifted');
-        setTimeout(() => {
-          img.classList.remove('lifted');
-        }, 1000); // El efecto dura 1 segundo
-      }
-    });
-  });
-</script>
-<div class="modal" id="image-modal">
-<div class="modal-content">
-<span class="close-button">×</span>
-<h2 id="modal-title"></h2>
-<ul id="modal-description-list"></ul>
-</div>
-</div></body>
+  <script src="js/app.js"></script>
+  <script src="js/script.js"></script>
+  <a href="https://wa.me/56998118816" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <img src="img/whatsapp-icon.png" alt="WhatsApp" />
+  </a>
+</body>
 </html>

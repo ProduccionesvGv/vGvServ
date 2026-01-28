@@ -181,17 +181,57 @@
     }
     .smalllink{color:rgba(255,255,255,.70); text-decoration:none}
     .smalllink:hover{text-decoration:underline}
-  </style>
+  
+
+    /* Branding sutil en el header (logo grande como en la referencia) */
+    header{
+      position: relative;
+      overflow: hidden;
+    }
+    
+    
+    header > *{ position: relative; z-index: 2; }
+    
+    
+        
+    /* Franja derecha con imagen (ocupa todo el rectángulo rojo) */
+    header{ position:relative; overflow:hidden; }
+    .cta-strip{
+      position:absolute;
+      top:0; bottom:0; right:0;
+      /* Ajuste: termina donde empieza el texto “NovaSeeds” */
+      left: 0;
+      background: #000;
+      border-left: 1px solid rgba(255,255,255,.08);
+      z-index:0;
+      overflow:hidden;
+    }
+    .cta-strip::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: url("assets/cta-bg.png") right center / cover no-repeat;
+      opacity:.95;
+      pointer-events:none;
+    }
+    /* Botones por encima de la franja */
+    .actions{ position:relative; z-index:2; padding: 8px 0; }
+
+
+    header > .brand, header > .actions{ position:relative; z-index:2; }
+    .cta-strip{ pointer-events:none; }
+</style>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
       <header>
+        <div class="cta-strip" aria-hidden="true"></div>
         <div class="brand">
-          <img src="assets/logo.png" alt="Logo NovaSeeds" />
+          <img src="assets/icon-192.png" alt="Logo NovaSeeds" />
           <div>
             <h1>NovaSeeds</h1>
-            <p>Información de marca y contacto</p>
+            <p></p>
           </div>
         </div>
 
@@ -204,16 +244,19 @@
       <main>
         <div class="grid">
           <section class="panel">
-            <h2>Quiénes somos</h2>
-            <p>
-              Somos NovaSeeds. Trabajamos con curaduría y selección de genética, con enfoque en calidad, presentación y experiencia de compra.
-              Si querés conocer el catálogo y disponibilidad, entrá al sitio principal o escribinos por WhatsApp.
-            </p>
-            <ul>
-              <li>Atención por WhatsApp</li>
-              <li>Información clara de productos y disponibilidad</li>
-              <li>Soporte y seguimiento</li>
-            </ul>
+            
+<h2>Quiénes somos</h2>
+<p>
+Somos distribuidores de <strong>PACK MIX BLISTER BSF</strong>.
+Nos dedicamos a la distribución y gestión de presentaciones originales, con foco en
+disponibilidad, seriedad y atención directa.
+</p>
+<ul>
+  <li>Distribución de packs mix blister BSF</li>
+  <li>Atención personalizada por WhatsApp</li>
+  <li>Seguimiento y soporte</li>
+</ul>
+
           </section>
 
           <aside class="panel contact">
@@ -230,7 +273,7 @@
             <div class="kv">
               <span class="tag">Enlaces</span>
               <div style="display:flex; flex-wrap:wrap; gap:10px;">
-                <a class="btn primary" href="https://produccionesvgv.github.io/WebSem/" rel="noopener">Ir al sitio principal</a>
+                <a class="btn primary" href="https://produccionesvgv.github.io/WebSem/" rel="noopener">NovaSeeds</a>
                 <a class="btn" href="https://wa.me/5491158768929?text=Hola%20NovaSeeds%2C%20quisiera%20informaci%C3%B3n%20y%20disponibilidad." rel="noopener">Escribir mensaje</a>
               </div>
             </div>
@@ -246,7 +289,7 @@
       <footer>
         <span>© <span id="y"></span> NovaSeeds</span>
         <span>
-          <a class="smalllink" href="https://produccionesvgv.github.io/WebSem/" rel="noopener">Sitio principal</a>
+          <a class="smalllink" href="https://produccionesvgv.github.io/WebSem/" rel="noopener">NovaSeeds WEB</a>
           ·
           <a class="smalllink" href="https://wa.me/5491158768929" rel="noopener">WhatsApp</a>
         </span>

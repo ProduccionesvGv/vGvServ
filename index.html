@@ -272,6 +272,26 @@
   .wrap{padding:18px 14px;}
   main{padding:16px 16px 18px 16px;}
 }
+
+
+/* ===== FIX Mobile header (logo + fondo raro) ===== */
+@media (max-width: 520px){
+  /* Evita que la imagen decorativa invada la zona del logo/título */
+  .cta-strip{ display:none !important; }          /* si existe franja derecha, la ocultamos en mobile */
+  .actions-wrap::before{ left: 0 !important; }    /* si hay pseudo-elemento con "reach", lo anulamos */
+  .actions-wrap{ width:100% !important; }
+
+  /* Header limpio en mobile */
+  header{ background:#000 !important; }
+
+  /* Icono sin “cuadrado transparente” */
+  .brand img{
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 12px !important;
+  }
+}
 </style>
 </head>
 <body>

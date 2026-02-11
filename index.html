@@ -1,192 +1,70 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
-<meta content="#000000" name="theme-color"/>
-<meta content="Semillas de colección en blister. Variedades autoflorecientes. Consultas y pedidos por WhatsApp. Envíos a todo el país." name="description"/>
-<title>NOVA Seeds - Semillas De Colección</title>
-<link href="css/styles.css" rel="stylesheet"/>
-<link as="image" fetchpriority="high" href="img/logo.png" rel="preload"/>
-<link href="manifest.json" rel="manifest"/>
-<link href="manifest.webmanifest" rel="manifest" media="(max-width:0px)"/>
-<link href="img/icon-192.png" rel="apple-touch-icon"/>
-<meta content="yes" name="apple-mobile-web-app-capable"/>
-<meta content="yes" name="mobile-web-app-capable"/>
-<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-<meta content="NOVA Seeds" name="apple-mobile-web-app-title"/>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DBK2QSC1G7"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-DBK2QSC1G7');
-  </script>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BSFMixPack | Bienvenida</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Pantalla de bienvenida de BSFMixPack (NovaSeeds.com)" />
 </head>
-<body class="theme-dark home-page">
-<!-- Banner superior -->
-<header class="site-header">
-<div class="header-inner">
-<img alt="Logo de NOVA Seeds" class="site-logo" decoding="async" fetchpriority="high" height="600" onerror="this.style.display='none'" src="img/logo.png" width="900"/>
-<img alt="BSF MixPack" class="site-logo-secondary" decoding="async" loading="eager" onerror="this.style.display='none'" src="img/bsf-mixpack.png" width="360" height="145" style="width:92vw;max-width:360px;height:auto;display:block;margin:0 auto 10px;"/>
-</div>
-</header>
-<main>
-<section class="carousel-section theme-b" id="cuadro2">
-<div class="section-head">
-<h2 class="section-title-mobile">MixPack Automaticas</h2>
-<div class="controls"><button aria-label="Anterior" id="prevBtn2">‹</button><button aria-label="Siguiente" id="nextBtn2">›</button></div>
-</div>
-<div aria-label="Carrusel de productos" class="carousel" id="carousel2"></div>
-</section>
 
-<div class="section-divider" role="separator" aria-hidden="true"></div>
+<body>
+  <main class="screen" role="main" aria-label="Pantalla de bienvenida">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="blob b4"></div>
 
-	<!-- Promo (entre carrusel y guía) -->
-	<section class="promo-strip" aria-label="Promoción AutoMix">
-	  <img
-	    class="promo-strip__img"
-	    src="img/f1.png"
-	    alt="Promoción AutoMix"
-	    loading="lazy"
-	    decoding="async"
-	    width="1536"
-	    height="384"/>
-	  <div class="promo-strip__copy" aria-label="Detalle de promoción">
-	    <span class="promo-strip__copy-text">Comprando cualquier AutoMix</span>
-	    <span class="promo-strip__copy-text">llevate</span>
-	    <span class="promo-strip__copy-x5">x5</span>
-	    <span class="promo-strip__copy-auto">AUTOGRANEL</span>
-	  </div>
+    <div class="streak s1"></div><div class="streak s2"></div><div class="streak s3"></div>
+    <div class="streak s4"></div><div class="streak s5"></div>
 
-	</section>
+    <div class="content">
+      <div class="logo" aria-hidden="true">
+        <!-- Monograma simple estilo “barra” -->
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="20" y1="20" x2="105" y2="105" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#F2F2FF"/>
+              <stop offset="1" stop-color="#CFCBFF"/>
+            </linearGradient>
+          </defs>
+          <rect x="18" y="26" rx="18" ry="18" width="84" height="28" fill="url(#g)"/>
+          <rect x="18" y="64" rx="18" ry="18" width="84" height="28" fill="url(#g)" opacity="0.95"/>
+          <circle cx="28" cy="74" r="14" fill="#EDEBFF"/>
+          <rect x="38" y="45" rx="12" ry="12" width="66" height="20" fill="#FFFFFF" opacity="0.85"/>
+        </svg>
+      </div>
 
+      <h1>BSFMixPack</h1>
+      <p class="sub">NovaSeeds.com</p>
 
-<section class="guide-section" id="guia">
-  <div class="guide-head">
-    <h3 class="guide-title">Guía de germinación</h3>
-    <a class="guide-link" href="tutorial.html" aria-label="Abrir guía de germinación">Ver guía</a>
-  </div>
+      <div class="spacer"></div>
 
-  <div class="background-banner">
-    <img alt="Guía de germinación" class="background-banner-img" decoding="async" loading="lazy" src="img/fondo-germinacion.png" width="1600" height="450"/>
-</div>
+      <div class="cta">
+        <!-- CTA principal: cámbialo al destino real si corresponde -->
+        <a class="btn" href="https://NovaSeeds.com" target="_blank" rel="noopener">Comenzar</a>
 
-  </section>
+        <!-- Secundario: ejemplo login -->
+        <a class="link" href="#login">Ya tengo una cuenta</a>
 
-<div class="section-divider" role="separator" aria-hidden="true"></div>
-
-<section class="delivery-section" id="entregas">
-  <div class="delivery-head">
-    <div class="delivery-titles">
-      <h3 class="delivery-title">Entregas personales</h3>
-      <h3 class="delivery-title">Puntos de Encuentro</h3>
-      <h3 class="delivery-title">Pagas Cuando lo Tenes</h3>
+        <div class="footer">
+          URL: <a class="footerLink" href="https://NovaSeeds.com" target="_blank" rel="noopener">NovaSeeds.com</a><br/>
+          WhatsApp: <a class="footerLink" href="https://wa.me/1158768929" target="_blank" rel="noopener">1158768929</a>
+        </div>
+      </div>
     </div>
-    <a class="delivery-map-link" href="https://share.google/TZr6S8qyfGYY9pbjv" target="_blank" rel="noopener">Ver mapa</a>
-  </div>
 
-  <p class="delivery-text">
-    Coordinamos la entrega por WhatsApp zona (Almagro / CABA). Consulta día y horario disponibles.
-  </p>
-
-  <div class="delivery-map" aria-label="Mapa de la zona">
-    <iframe
-      class="delivery-map-frame"
-      title="Mapa de la zona"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      src="https://www.google.com/maps?q=Almagro%2C%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires&output=embed"></iframe>
-  </div>
-</section>
-
-<div class="section-divider" role="separator" aria-hidden="true"></div>
-
-<section class="shipping-section" id="envios">
-  <h3 class="shipping-title">Envíos a todo el país por Andreani (a cargo del comprador)</h3>
-  <img class="shipping-img" src="img/andreani.png" alt="Andreani - Envíos a todo el país" loading="lazy" decoding="async" width="1500" height="292"/>
-</section>
-
-<div class="section-divider" role="separator" aria-hidden="true"></div>
-
-<section class="contact-section" id="contacto" aria-label="Contacto">
-  <div class="contact-card" role="list">
-    <a class="contact-row contact-row--phone" role="listitem" href="https://wa.me/5491158768929" target="_blank" rel="noopener" aria-label="WhatsApp 1158768929">
-      <span class="contact-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M22 16.9v3.1a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.02 4.2 2 2 0 0 1 4 2h3.1a2 2 0 0 1 2 1.72c.12.86.32 1.7.6 2.5a2 2 0 0 1-.45 2.11L8.1 9.48a15.8 15.8 0 0 0 6.42 6.42l1.15-1.15a2 2 0 0 1 2.11-.45c.8.28 1.64.48 2.5.6A2 2 0 0 1 22 16.9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <span class="contact-text">1158768929</span>
+    <!-- WhatsApp flotante -->
+    <a class="wa" href="https://wa.me/1158768929" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 11.9c0 4.4-3.6 8-8 8a7.9 7.9 0 0 1-3.8-1L4 20l1.1-4.1a7.9 7.9 0 0 1-1.1-4c0-4.4 3.6-8 8-8s8 3.6 8 8Z" stroke="white" stroke-width="1.6" opacity=".95"/>
+        <path d="M9.1 8.6c-.2-.5-.4-.5-.6-.5H8c-.2 0-.5.1-.7.4-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.6 4.2 3.6 2 .8 2.5.7 2.9.6.4-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.1-.3-.2-.7-.4l-1.5-.7c-.2-.1-.4-.1-.6.1-.2.2-.6.7-.8.8-.2.1-.3.1-.6 0-.3-.1-1.2-.4-2.2-1.3-.8-.7-1.3-1.6-1.4-1.9-.1-.3 0-.4.1-.5.1-.1.3-.3.4-.4.1-.1.2-.3.3-.5.1-.2.1-.4 0-.6l-.4-1.1Z"
+              fill="white" opacity=".9"/>
+      </svg>
     </a>
+  </main>
 
-    <div class="contact-divider" role="separator" aria-hidden="true"></div>
-
-    <a class="contact-row" role="listitem" href="https://novaseeds-argentina.github.io/MixPack/" target="_blank" rel="noopener" aria-label="Sitio web novaseeds-argentina.github.io/MixPack">
-      <span class="contact-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-          <path d="M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M12 3c3 3.5 3 14.5 0 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <path d="M12 3c-3 3.5-3 14.5 0 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-      <span class="contact-text">novaseeds-argentina.github.io/MixPack</span>
-    </a>
-
-    <div class="contact-divider" role="separator" aria-hidden="true"></div>
-
-    <a class="contact-row" role="listitem" href="https://www.google.com/maps?q=Humahuaca%204642" target="_blank" rel="noopener" aria-label="Dirección Humahuaca 4650">
-      <span class="contact-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-          <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/>
-        </svg>
-      </span>
-      <span class="contact-text">Humahuaca 4650</span>
-    </a>
-  </div>
-</section>
-
-<div class="section-divider" role="separator" aria-hidden="true"></div>
-
-<section class="app-install-section" aria-label="Instalar app">
-  <button class="app-toast app-install-btn" type="button" aria-label="Instalar NOVA Seeds">
-    <img id="appInstallImg" src="./img/app2.png" alt="Instalar NOVA Seeds" loading="eager" decoding="async" fetchpriority="low" onerror="this.onerror=null;this.src='img/app2.png';">
-  </button>
-</section>
-
-<footer class="site-footer" aria-label="Copyright">novaseeds-argentina 2026 todos los derechos reservados</footer>
-
-
-
-</main>
-<noscript><div style="padding:12px;color:#fff;background:#111;border:1px solid #222;border-radius:12px;margin:12px;">Para ver el catálogo completo, activá JavaScript en tu navegador.</div></noscript>
-<!-- modal gallery -->
-<div aria-hidden="true" class="lightbox" id="lightbox">
-<div class="lb-inner">
-<button aria-label="Cerrar" class="lb-close" id="lb-close">×</button>
-<img alt="" id="lb-img" src=""/>
-<div class="lb-thumbs" id="lb-thumbs"></div>
-</div>
-</div>
-<!-- Modal: instrucciones de instalación (PWA) -->
-<div class="install-modal" id="installModal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="install-modal__inner" role="document">
-    <button class="install-modal__close" id="installModalClose" type="button" aria-label="Cerrar">×</button>
-    <h4 class="install-modal__title">Instalar NOVA Seeds</h4>
-    <div class="install-modal__body" id="installModalBody"></div>
-  </div>
-</div>
-
-<script defer="" src="js/app.js"></script>
-<script defer="" src="js/pwa.js"></script>
-<!-- WhatsApp Floating Button -->
-<div class="wa-stack" aria-label="Accesos rápidos">
-<a aria-label="WhatsApp" class="wa-fab" href="https://wa.me/5491158768929?text=Hola%2C%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20sus%20productos%20y%20disponibilidad.%20%C2%A1Gracias%21" id="wa-fab" rel="noopener" target="_blank"></a>
-</div>
+  <!-- Sección ficticia de login para el ancla -->
+  <section id="login" class="hiddenSection" aria-hidden="true"></section>
 </body>
 </html>

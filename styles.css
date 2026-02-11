@@ -1,0 +1,170 @@
+:root{
+  --bg1:#3b2c9a;
+  --bg2:#4a39b7;
+  --bg3:#6a52d5;
+  --text:#ffffff;
+  --muted:rgba(255,255,255,.78);
+  --card-radius:28px;
+  --btn:#ffffff;
+  --btnText:#4a39b7;
+  --shadow: 0 24px 60px rgba(10, 6, 40, .35);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  display:grid;
+  place-items:center;
+  background: radial-gradient(900px 600px at 20% 10%, rgba(106,82,213,.35), transparent 60%),
+              radial-gradient(900px 700px at 80% 90%, rgba(74,57,183,.35), transparent 60%),
+              linear-gradient(135deg, #201a57 0%, #17123f 100%);
+  padding:24px;
+}
+
+/* “Pantalla” tipo móvil */
+.screen{
+  width:min(390px, 92vw);
+  height:min(760px, 88vh);
+  border-radius: var(--card-radius);
+  color:var(--text);
+  position:relative;
+  overflow:hidden;
+  box-shadow: var(--shadow);
+  background: linear-gradient(135deg, var(--bg2) 0%, var(--bg1) 45%, var(--bg3) 100%);
+}
+
+/* Decoración: blobs */
+.blob{
+  position:absolute;
+  border-radius:999px;
+  opacity:.35;
+  transform: rotate(20deg);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), rgba(255,255,255,0) 60%),
+              linear-gradient(135deg, rgba(255,255,255,.22), rgba(255,255,255,0));
+}
+.blob.b1{ width:220px; height:120px; left:-60px; top:90px; }
+.blob.b2{ width:260px; height:140px; right:-120px; top:40px; opacity:.25; }
+.blob.b3{ width:240px; height:130px; left:-70px; bottom:140px; opacity:.25; }
+.blob.b4{ width:260px; height:140px; right:-110px; bottom:180px; opacity:.32; }
+
+/* Líneas diagonales */
+.streak{
+  position:absolute;
+  width:2px;
+  height:70px;
+  background: rgba(255,255,255,.22);
+  transform: rotate(35deg);
+  border-radius:999px;
+}
+.streak.s1{ left:70px; top:55px; height:60px; opacity:.25;}
+.streak.s2{ left:120px; top:105px; height:90px; opacity:.18;}
+.streak.s3{ right:85px; top:75px; height:80px; opacity:.22;}
+.streak.s4{ left:95px; bottom:190px; height:90px; opacity:.18;}
+.streak.s5{ right:120px; bottom:150px; height:70px; opacity:.22;}
+
+.content{
+  position:relative;
+  height:100%;
+  padding:46px 28px 28px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* Logo/monograma */
+.logo{
+  margin-top:50px;
+  width:96px;
+  height:96px;
+  display:grid;
+  place-items:center;
+}
+.logo svg{ width:100%; height:100%; filter: drop-shadow(0 10px 20px rgba(0,0,0,.18)); }
+
+h1{
+  margin:18px 0 6px;
+  font-size:34px;
+  letter-spacing:.2px;
+  line-height:1.1;
+  text-align:center;
+}
+
+.sub{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+  text-align:center;
+}
+
+.spacer{ flex:1; }
+
+.cta{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.btn{
+  width:100%;
+  border:0;
+  border-radius:999px;
+  padding:16px 18px;
+  background:var(--btn);
+  color:var(--btnText);
+  font-weight:700;
+  font-size:16px;
+  cursor:pointer;
+  box-shadow: 0 12px 24px rgba(0,0,0,.18);
+  text-decoration:none;
+  text-align:center;
+  transition: transform .08s ease;
+}
+.btn:active{ transform: scale(.99); }
+
+.link{
+  font-size:12px;
+  color: rgba(255,255,255,.78);
+  text-decoration:none;
+}
+.link:hover{ text-decoration:underline; }
+
+/* Botón WhatsApp flotante */
+.wa{
+  position:absolute;
+  right:18px;
+  bottom:18px;
+  width:52px;
+  height:52px;
+  border-radius:999px;
+  background: rgba(255,255,255,.16);
+  backdrop-filter: blur(10px);
+  display:grid;
+  place-items:center;
+  border: 1px solid rgba(255,255,255,.18);
+  text-decoration:none;
+}
+.wa svg{ width:22px; height:22px; opacity:.95; }
+
+.footer{
+  font-size:12px;
+  color: rgba(255,255,255,.72);
+  text-align:center;
+  line-height:1.35;
+  margin-top:2px;
+}
+.footerLink{
+  color: rgba(255,255,255,.9);
+  text-decoration:none;
+}
+.footerLink:hover{ text-decoration:underline; }
+
+.hiddenSection{ display:none; }
+
+@media (prefers-reduced-motion: reduce){
+  .btn{ transition:none; }
+}

@@ -1,376 +1,192 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NovaSeeds</title>
-  <meta name="description" content="Bienvenida a NovaSeeds. Información de la marca y contacto." />
-  <link rel="icon" type="image/png" href="assets/icon-192.png" />
-  <style>
-    :root{
-      --bg: #0b0f14;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.10);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --line: rgba(255,255,255,.14);
-      --accent: #6ee7b7;
-      --accent2: #60a5fa;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 10% 0%, rgba(96,165,250,.18), transparent 55%),
-        radial-gradient(900px 500px at 90% 15%, rgba(110,231,183,.16), transparent 55%),
-        linear-gradient(180deg, #070a0f, var(--bg));
-    }
-    a{color:inherit}
-    .wrap{
-      min-height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px 16px;
-    }
-    .card{
-      width:min(980px, 100%);
-      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
-      border:1px solid var(--line);
-      border-radius:22px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.45);
-      overflow:hidden;
-    }
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
-      padding:22px 22px 16px 22px;
-      border-bottom:1px solid var(--line);
-      background: rgba(0,0,0,.18);
-      backdrop-filter: blur(10px);
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      min-width:0;
-    }
-    .brand img{
-      width:52px;
-      height:52px;
-      object-fit:contain;
-      border-radius:12px;
-      background: rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.10);
-      padding:6px;
-    }
-    .brand h1{
-      font-size:18px;
-      line-height:1.2;
-      margin:0;
-      letter-spacing:.2px;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .brand p{
-      margin:3px 0 0 0;
-      font-size:13px;
-      color:var(--muted);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    .btn{
-      appearance:none;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      color:var(--text);
-      padding:10px 12px;
-      border-radius:14px;
-      font-weight:600;
-      font-size:14px;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
-    }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.26);}
-    .btn.primary{
-      border:1px solid rgba(110,231,183,.35);
-      background: linear-gradient(180deg, rgba(110,231,183,.22), rgba(110,231,183,.10));
-    }
-    .btn.primary:hover{border-color: rgba(110,231,183,.55); background: linear-gradient(180deg, rgba(110,231,183,.28), rgba(110,231,183,.14));}
-    main{padding:18px 22px 22px 22px;}
-    .grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:16px;
-    }
-    @media (max-width: 820px){
-      header{flex-direction:column; align-items:flex-start}
-      .actions{justify-content:flex-start}
-      .grid{grid-template-columns:1fr}
-    }
-    .panel{
-      background: rgba(255,255,255,.05);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:18px;
-      padding:16px;
-    }
-    .panel h2{
-      margin:0 0 10px 0;
-      font-size:15px;
-      letter-spacing:.2px;
-    }
-    .panel p, .panel li{
-      margin:0;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.55;
-    }
-    .panel ul{
-      margin:10px 0 0 18px;
-      padding:0;
-      color:var(--muted);
-    }
-    .contact{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .kv{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:12px;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.18);
-    }
-    .tag{
-      font-size:12px;
-      padding:4px 9px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      color:rgba(255,255,255,.82);
-      white-space:nowrap;
-    }
-    footer{
-      padding:14px 22px 18px 22px;
-      border-top:1px solid var(--line);
-      color:rgba(255,255,255,.55);
-      font-size:12px;
-      display:flex;
-      gap:10px;
-      justify-content:space-between;
-      flex-wrap:wrap;
-    }
-    .smalllink{color:rgba(255,255,255,.70); text-decoration:none}
-    .smalllink:hover{text-decoration:underline}
-  
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+<meta content="#000000" name="theme-color"/>
+<meta content="Semillas de colección en blister. Variedades autoflorecientes. Consultas y pedidos por WhatsApp. Envíos a todo el país." name="description"/>
+<title>NOVA Seeds - Semillas De Colección</title>
+<link href="css/styles.css" rel="stylesheet"/>
+<link as="image" fetchpriority="high" href="img/logo.png" rel="preload"/>
+<link href="manifest.json" rel="manifest"/>
+<link href="manifest.webmanifest" rel="manifest" media="(max-width:0px)"/>
+<link href="img/icon-192.png" rel="apple-touch-icon"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="yes" name="mobile-web-app-capable"/>
+<meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="NOVA Seeds" name="apple-mobile-web-app-title"/>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DBK2QSC1G7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DBK2QSC1G7');
+  </script>
 
-    /* Branding sutil en el header (logo grande como en la referencia) */
-    header{
-      position: relative;
-      overflow: hidden;
-    }
-    
-    
-    header > *{ position: relative; z-index: 2; }
-    
-    
-        
-    /* Franja derecha con imagen (ocupa todo el rectángulo rojo) */
-    header{ position:relative; overflow:hidden; }
-    .cta-strip{
-      position:absolute;
-      top:0; bottom:0; right:0;
-      /* Ajuste: termina donde empieza el texto “NovaSeeds” */
-      left: 0;
-      background: #000;
-      border-left: 1px solid rgba(255,255,255,.08);
-      z-index:0;
-      overflow:hidden;
-    }
-    .cta-strip::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background: url("assets/cta-bg.png") right center / cover no-repeat;
-      opacity:.95;
-      pointer-events:none;
-    }
-    /* Botones por encima de la franja */
-    .actions{ position:relative; z-index:2; padding: 8px 0; }
-
-
-    header > .brand, header > .actions{ position:relative; z-index:2; }
-    .cta-strip{ pointer-events:none; }
-
-
-/* ===== Mobile-first ajustes ===== */
-@media (max-width: 520px){
-  .wrap{padding:16px 12px;}
-  .card{border-radius:18px;}
-  header{
-    padding:14px 14px 12px 14px;
-    gap:12px;
-  }
-  .brand img{
-    width:44px;height:44px;border-radius:12px;padding:6px;
-  }
-  .brand h1{font-size:17px;}
-  .brand p{font-size:12px;}
-
-  /* Header: marca arriba, botones abajo, a lo ancho */
-  header{flex-direction:column; align-items:stretch;}
-  .brand{justify-content:flex-start;}
-  .actions{
-    width:100%;
-    justify-content:space-between;
-    gap:10px;
-  }
-  .btn{
-    flex:1 1 0;
-    justify-content:center;
-    padding:11px 12px;
-    border-radius:14px;
-    font-size:14px;
-  }
-
-  /* Si hay franja/imagen detrás de botones, que no se corte raro */
-  .actions-wrap, .cta-strip{
-    width:100%;
-    max-width:100%;
-  }
-
-  main{padding:14px;}
-  .grid{grid-template-columns:1fr; gap:12px;}
-  .panel{padding:14px; border-radius:16px;}
-  .panel h2{font-size:15px;}
-  .panel p, .panel li{font-size:14px;}
-  .kv{padding:12px; border-radius:14px;}
-  footer{padding:12px 14px 14px 14px; font-size:12px;}
-}
-
-/* Tablets compactas */
-@media (max-width: 820px){
-  .wrap{padding:18px 14px;}
-  main{padding:16px 16px 18px 16px;}
-}
-
-
-/* ===== FIX Mobile header (logo + fondo raro) ===== */
-@media (max-width: 520px){
-  /* Evita que la imagen decorativa invada la zona del logo/título */
-  .cta-strip{ display:none !important; }          /* si existe franja derecha, la ocultamos en mobile */
-  .actions-wrap::before{ left: 0 !important; }    /* si hay pseudo-elemento con "reach", lo anulamos */
-  .actions-wrap{ width:100% !important; }
-
-  /* Header limpio en mobile */
-  header{ background:#000 !important; }
-
-  /* Icono sin “cuadrado transparente” */
-  .brand img{
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    border-radius: 12px !important;
-  }
-}
-</style>
 </head>
-<body>
-  <div class="wrap">
-    <div class="card">
-      <header>
-        <div class="cta-strip" aria-hidden="true"></div>
-        <div class="brand">
-          <img src="assets/icon-192.png" alt="Logo NovaSeeds" />
-          <div>
-            <h1>NovaSeeds</h1>
-            <p></p>
-          </div>
-        </div>
+<body class="theme-dark home-page">
+<!-- Banner superior -->
+<header class="site-header">
+<div class="header-inner">
+<img alt="Logo de NOVA Seeds" class="site-logo" decoding="async" fetchpriority="high" height="600" onerror="this.style.display='none'" src="img/logo.png" width="900"/>
+<img alt="BSF MixPack" class="site-logo-secondary" decoding="async" loading="eager" onerror="this.style.display='none'" src="img/bsf-mixpack.png" width="360" height="145" style="width:92vw;max-width:360px;height:auto;display:block;margin:0 auto 10px;"/>
+</div>
+</header>
+<main>
+<section class="carousel-section theme-b" id="cuadro2">
+<div class="section-head">
+<h2 class="section-title-mobile">MixPack Automaticas</h2>
+<div class="controls"><button aria-label="Anterior" id="prevBtn2">‹</button><button aria-label="Siguiente" id="nextBtn2">›</button></div>
+</div>
+<div aria-label="Carrusel de productos" class="carousel" id="carousel2"></div>
+</section>
 
-        <div class="actions">
-          <a class="btn primary" href="https://produccionesvgv.github.io/WebSem/" rel="noopener">Entrar</a>
-          <a class="btn" href="https://wa.me/5491158768929" rel="noopener">WhatsApp</a>
-        </div>
-      </header>
+<div class="section-divider" role="separator" aria-hidden="true"></div>
 
-      <main>
-        <div class="grid">
-          <section class="panel">
-            
-<h2>Quiénes somos</h2>
-<p>
-Somos distribuidores de <strong>PACK MIX BLISTER BSF</strong>.
-Nos dedicamos a la distribución y gestión de presentaciones originales, con foco en
-disponibilidad, seriedad y atención directa.
-</p>
-<ul>
-  <li>Distribución de packs mix blister BSF</li>
-  <li>Atención personalizada por WhatsApp</li>
-  <li>Seguimiento y soporte</li>
-</ul>
+	<!-- Promo (entre carrusel y guía) -->
+	<section class="promo-strip" aria-label="Promoción AutoMix">
+	  <img
+	    class="promo-strip__img"
+	    src="img/f1.png"
+	    alt="Promoción AutoMix"
+	    loading="lazy"
+	    decoding="async"
+	    width="1536"
+	    height="384"/>
+	  <div class="promo-strip__copy" aria-label="Detalle de promoción">
+	    <span class="promo-strip__copy-text">Comprando cualquier AutoMix</span>
+	    <span class="promo-strip__copy-text">llevate</span>
+	    <span class="promo-strip__copy-x5">x5</span>
+	    <span class="promo-strip__copy-auto">AUTOGRANEL</span>
+	  </div>
 
-          </section>
+	</section>
 
-          <aside class="panel contact">
-            <h2>Contacto</h2>
 
-            <div class="kv">
-              <span class="tag">Teléfono</span>
-              <div>
-                <div style="font-weight:700; margin-bottom:2px;">+54 9 11 5876-8929</div>
-                <div style="color:rgba(255,255,255,.68); font-size:13px;">También por WhatsApp</div>
-              </div>
-            </div>
-
-            <div class="kv">
-              <span class="tag">Enlaces</span>
-              <div style="display:flex; flex-wrap:wrap; gap:10px;">
-                <a class="btn primary" href="https://produccionesvgv.github.io/WebSem/" rel="noopener">NovaSeeds</a>
-                <a class="btn" href="https://wa.me/5491158768929?text=Hola%20NovaSeeds%2C%20quisiera%20informaci%C3%B3n%20y%20disponibilidad." rel="noopener">Escribir mensaje</a>
-              </div>
-            </div>
-
-            <div class="kv">
-              <span class="tag">Nota</span>
-              <p>Si estás llegando desde redes, este es el acceso de bienvenida. El catálogo está en el sitio principal.</p>
-            </div>
-          </aside>
-        </div>
-      </main>
-
-      <footer>
-        <span>© <span id="y"></span> NovaSeeds</span>
-        <span>
-          <a class="smalllink" href="https://produccionesvgv.github.io/WebSem/" rel="noopener">NovaSeeds WEB</a>
-          ·
-          <a class="smalllink" href="https://wa.me/5491158768929" rel="noopener">WhatsApp</a>
-        </span>
-      </footer>
-    </div>
+<section class="guide-section" id="guia">
+  <div class="guide-head">
+    <h3 class="guide-title">Guía de germinación</h3>
+    <a class="guide-link" href="tutorial.html" aria-label="Abrir guía de germinación">Ver guía</a>
   </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <div class="background-banner">
+    <img alt="Guía de germinación" class="background-banner-img" decoding="async" loading="lazy" src="img/fondo-germinacion.png" width="1600" height="450"/>
+</div>
+
+  </section>
+
+<div class="section-divider" role="separator" aria-hidden="true"></div>
+
+<section class="delivery-section" id="entregas">
+  <div class="delivery-head">
+    <div class="delivery-titles">
+      <h3 class="delivery-title">Entregas personales</h3>
+      <h3 class="delivery-title">Puntos de Encuentro</h3>
+      <h3 class="delivery-title">Pagas Cuando lo Tenes</h3>
+    </div>
+    <a class="delivery-map-link" href="https://share.google/TZr6S8qyfGYY9pbjv" target="_blank" rel="noopener">Ver mapa</a>
+  </div>
+
+  <p class="delivery-text">
+    Coordinamos la entrega por WhatsApp zona (Almagro / CABA). Consulta día y horario disponibles.
+  </p>
+
+  <div class="delivery-map" aria-label="Mapa de la zona">
+    <iframe
+      class="delivery-map-frame"
+      title="Mapa de la zona"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=Almagro%2C%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires&output=embed"></iframe>
+  </div>
+</section>
+
+<div class="section-divider" role="separator" aria-hidden="true"></div>
+
+<section class="shipping-section" id="envios">
+  <h3 class="shipping-title">Envíos a todo el país por Andreani (a cargo del comprador)</h3>
+  <img class="shipping-img" src="img/andreani.png" alt="Andreani - Envíos a todo el país" loading="lazy" decoding="async" width="1500" height="292"/>
+</section>
+
+<div class="section-divider" role="separator" aria-hidden="true"></div>
+
+<section class="contact-section" id="contacto" aria-label="Contacto">
+  <div class="contact-card" role="list">
+    <a class="contact-row contact-row--phone" role="listitem" href="https://wa.me/5491158768929" target="_blank" rel="noopener" aria-label="WhatsApp 1158768929">
+      <span class="contact-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M22 16.9v3.1a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.02 4.2 2 2 0 0 1 4 2h3.1a2 2 0 0 1 2 1.72c.12.86.32 1.7.6 2.5a2 2 0 0 1-.45 2.11L8.1 9.48a15.8 15.8 0 0 0 6.42 6.42l1.15-1.15a2 2 0 0 1 2.11-.45c.8.28 1.64.48 2.5.6A2 2 0 0 1 22 16.9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="contact-text">1158768929</span>
+    </a>
+
+    <div class="contact-divider" role="separator" aria-hidden="true"></div>
+
+    <a class="contact-row" role="listitem" href="https://novaseeds-argentina.github.io/MixPack/" target="_blank" rel="noopener" aria-label="Sitio web novaseeds-argentina.github.io/MixPack">
+      <span class="contact-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+          <path d="M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 3c3 3.5 3 14.5 0 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 3c-3 3.5-3 14.5 0 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="contact-text">novaseeds-argentina.github.io/MixPack</span>
+    </a>
+
+    <div class="contact-divider" role="separator" aria-hidden="true"></div>
+
+    <a class="contact-row" role="listitem" href="https://www.google.com/maps?q=Humahuaca%204642" target="_blank" rel="noopener" aria-label="Dirección Humahuaca 4650">
+      <span class="contact-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </span>
+      <span class="contact-text">Humahuaca 4650</span>
+    </a>
+  </div>
+</section>
+
+<div class="section-divider" role="separator" aria-hidden="true"></div>
+
+<section class="app-install-section" aria-label="Instalar app">
+  <button class="app-toast app-install-btn" type="button" aria-label="Instalar NOVA Seeds">
+    <img id="appInstallImg" src="./img/app2.png" alt="Instalar NOVA Seeds" loading="eager" decoding="async" fetchpriority="low" onerror="this.onerror=null;this.src='img/app2.png';">
+  </button>
+</section>
+
+<footer class="site-footer" aria-label="Copyright">novaseeds-argentina 2026 todos los derechos reservados</footer>
+
+
+
+</main>
+<noscript><div style="padding:12px;color:#fff;background:#111;border:1px solid #222;border-radius:12px;margin:12px;">Para ver el catálogo completo, activá JavaScript en tu navegador.</div></noscript>
+<!-- modal gallery -->
+<div aria-hidden="true" class="lightbox" id="lightbox">
+<div class="lb-inner">
+<button aria-label="Cerrar" class="lb-close" id="lb-close">×</button>
+<img alt="" id="lb-img" src=""/>
+<div class="lb-thumbs" id="lb-thumbs"></div>
+</div>
+</div>
+<!-- Modal: instrucciones de instalación (PWA) -->
+<div class="install-modal" id="installModal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="install-modal__inner" role="document">
+    <button class="install-modal__close" id="installModalClose" type="button" aria-label="Cerrar">×</button>
+    <h4 class="install-modal__title">Instalar NOVA Seeds</h4>
+    <div class="install-modal__body" id="installModalBody"></div>
+  </div>
+</div>
+
+<script defer="" src="js/app.js"></script>
+<script defer="" src="js/pwa.js"></script>
+<!-- WhatsApp Floating Button -->
+<div class="wa-stack" aria-label="Accesos rápidos">
+<a aria-label="WhatsApp" class="wa-fab" href="https://wa.me/5491158768929?text=Hola%2C%20quisiera%20solicitar%20informaci%C3%B3n%20sobre%20sus%20productos%20y%20disponibilidad.%20%C2%A1Gracias%21" id="wa-fab" rel="noopener" target="_blank"></a>
+</div>
 </body>
 </html>

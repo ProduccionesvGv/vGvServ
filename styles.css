@@ -92,8 +92,9 @@ body{
 /* Logo/monograma */
 .logo{
   margin: 0 0 14px;
-  width: clamp(92px, 16vw, 112px);
-  height: clamp(92px, 16vw, 112px);
+  /* +50% */
+  width: clamp(138px, 24vw, 168px);
+  height: clamp(138px, 24vw, 168px);
   display:grid;
   place-items:center;
 }
@@ -159,23 +160,6 @@ h1{
   text-decoration:none;
 }
 .link:hover{ text-decoration:underline; }
-
-/* Botón WhatsApp flotante */
-.wa{
-  position:absolute;
-  right:18px;
-  bottom:18px;
-  width:52px;
-  height:52px;
-  border-radius:999px;
-  background: rgba(244,246,244,.16);
-  backdrop-filter: blur(10px);
-  display:grid;
-  place-items:center;
-  border: 1px solid rgba(244,246,244,.18);
-  text-decoration:none;
-}
-.wa svg{ width:22px; height:22px; opacity:.95; }
 
 .footer{
   font-size:12px;

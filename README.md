@@ -2,6 +2,10 @@
 
 Plantilla simple (HTML + CSS) para una pantalla de bienvenida estilo app.
 
+## URL publicada
+- https://novaseeds-argentina.github.io/MixPack/
+
+
 ## Archivos
 - `index.html`
 - `styles.css`
